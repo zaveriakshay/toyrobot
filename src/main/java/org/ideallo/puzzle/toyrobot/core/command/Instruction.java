@@ -14,22 +14,16 @@ public class Instruction extends Base {
 
     private TransformationType transformationType;
 
-    private RotationType rotationType;
-
-    private Coordinates coordinates;
-
     private TransformationCommand transformationCommand;
 
     public Instruction(RotationType rotationType){
         setTransformationType(TransformationType.ROTATE);
-        setRotationType(rotationType);
-        setTransformationCommand(new RotationCommand());
+        setTransformationCommand(new RotationCommand(rotationType));
     }
 
     public Instruction(Coordinates coordinates){
         setTransformationType(TransformationType.POSITION);
-        setCoordinates(coordinates);
-        setTransformationCommand(new PositionCommand());
+        setTransformationCommand(new PositionCommand(coordinates));
     }
 
     public Instruction(){
@@ -44,22 +38,6 @@ public class Instruction extends Base {
 
     public void setTransformationType(TransformationType transformationType) {
         this.transformationType = transformationType;
-    }
-
-    public RotationType getRotationType() {
-        return rotationType;
-    }
-
-    public void setRotationType(RotationType rotationType) {
-        this.rotationType = rotationType;
-    }
-
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(Coordinates coordinates) {
-        this.coordinates = coordinates;
     }
 
     public TransformationCommand getTransformationCommand() {

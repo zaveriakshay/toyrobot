@@ -2,15 +2,22 @@ package org.ideallo.puzzle.toyrobot.core.object;
 
 import org.ideallo.puzzle.toyrobot.core.Base;
 import org.ideallo.puzzle.toyrobot.core.enums.DirectionType;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.annotation.ApplicationScope;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author akshay.zaveri
  */
+
 @Component
-@ApplicationScope
+@Scope(value = WebApplicationContext.SCOPE_APPLICATION)
 public class Robot extends Base {
 
     private String name;
@@ -27,17 +34,12 @@ public class Robot extends Base {
         init();
     }
 
-    private void init() {
+    public void init() {
+        setName("Akshay Zaveri");
+        setModel("T-900");
+        setVersion("1.0.0.0.X");
         setDirectionType(DirectionType.NORTH);
         setCoordinates(new Coordinates());
-    }
-
-    public Robot (String name, String model, String version, DirectionType directionType, Coordinates coordinates){
-        setName(name);
-        setModel(model);
-        setVersion(version);
-        setDirectionType(directionType);
-        setCoordinates(coordinates);
     }
 
     public String getName() {

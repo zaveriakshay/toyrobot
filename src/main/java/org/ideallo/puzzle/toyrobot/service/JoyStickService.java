@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
  * This class will be implementing all the features required to operate the robot.
  * It will extend the @{@link BaseAbstractService}
  */
-@Service
 public interface JoyStickService extends BaseAbstractService{
 
     /**
@@ -20,6 +19,6 @@ public interface JoyStickService extends BaseAbstractService{
      */
     public Robot transform(Robot robot, Instruction instruction);
 
-    public Robot output();
+    public Robot report();
 
 }

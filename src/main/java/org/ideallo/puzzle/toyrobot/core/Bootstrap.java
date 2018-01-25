@@ -1,7 +1,16 @@
 package org.ideallo.puzzle.toyrobot.core;
 
+import org.ideallo.puzzle.toyrobot.core.object.Robot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.web.context.WebApplicationContext;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author akshay.zaveri
@@ -9,7 +18,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class Bootstrap {
+@ComponentScan(basePackages = "org.ideallo.*")
+public class Bootstrap  {
 
     /**
      * Host the Servlet Container here.
@@ -23,6 +33,4 @@ public class Bootstrap {
          */
         SpringApplication.run(Bootstrap.class,args);
     }
-
-
 }

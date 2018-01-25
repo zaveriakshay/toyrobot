@@ -14,6 +14,14 @@ public class RotationCommand extends BaseTransformationCommand<Robot> {
 
     private RotationType rotationType;
 
+    public RotationCommand (){
+
+    }
+
+    public RotationCommand(RotationType rotationType){
+        setRotationType(rotationType);
+    }
+
     public RotationType getRotationType() {
         return rotationType;
     }
