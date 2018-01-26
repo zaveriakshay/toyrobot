@@ -1,8 +1,7 @@
 package org.ideallo.puzzle.toyrobot.core.command;
 
-import org.ideallo.puzzle.toyrobot.core.Base;
 import org.ideallo.puzzle.toyrobot.core.enums.RotationType;
-import org.ideallo.puzzle.toyrobot.core.object.Robot;
+import org.ideallo.puzzle.toyrobot.core.Robot;
 
 /**
  * @author akshay.zaveri

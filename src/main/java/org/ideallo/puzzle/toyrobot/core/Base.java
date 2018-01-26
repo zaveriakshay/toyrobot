@@ -5,6 +5,6 @@ import java.io.Serializable;
 /**
  * @author akshay.zaveri
  */
-public abstract  class Base implements Serializable{
+public abstract class Base implements Serializable{
 
 }

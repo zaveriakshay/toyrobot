@@ -1,9 +1,7 @@
 package org.ideallo.puzzle.toyrobot.service;
 
-import org.ideallo.puzzle.toyrobot.core.command.Instruction;
-import org.ideallo.puzzle.toyrobot.core.command.TransformationCommand;
-import org.ideallo.puzzle.toyrobot.core.object.Robot;
-import org.springframework.stereotype.Service;
+import org.ideallo.puzzle.toyrobot.core.instruction.BaseInstruction;
+import org.ideallo.puzzle.toyrobot.core.Robot;
 
 /**
  * @author akshay.zaveri
@@ -13,11 +11,11 @@ import org.springframework.stereotype.Service;
 public interface JoyStickService extends BaseAbstractService{
 
     /**
-     * This method will accept the command type object and respond accordingly.
-     * @param instruction
+     * This method will accept the command type vector and respond accordingly.
+     * @param baseInstruction
      * @param robot
      */
-    public Robot transform(Robot robot, Instruction instruction);
+    public Robot transform(Robot robot, BaseInstruction baseInstruction);
 
     public Robot report();
 

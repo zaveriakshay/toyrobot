@@ -1,4 +1,4 @@
-package org.ideallo.puzzle.toyrobot.core;
+package org.ideallo.puzzle.toyrobot.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

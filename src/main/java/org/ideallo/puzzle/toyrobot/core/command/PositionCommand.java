@@ -1,9 +1,10 @@
 package org.ideallo.puzzle.toyrobot.core.command;
 
 import org.ideallo.puzzle.toyrobot.core.constants.AppConstants;
-import org.ideallo.puzzle.toyrobot.core.object.Coordinates;
-import org.ideallo.puzzle.toyrobot.core.object.Robot;
-import org.ideallo.puzzle.toyrobot.core.object.TransformationException;
+import org.ideallo.puzzle.toyrobot.core.enums.DirectionType;
+import org.ideallo.puzzle.toyrobot.core.vector.Coordinates;
+import org.ideallo.puzzle.toyrobot.core.Robot;
+import org.ideallo.puzzle.toyrobot.core.vector.TransformationException;
 
 /**
  * @author akshay.zaveri
@@ -16,7 +17,14 @@ public class PositionCommand extends BaseTransformationCommand<Robot> {
         setCoordinates(coordinates);
     }
 
+    public PositionCommand(Coordinates coordinates,DirectionType directionType){
+        setCoordinates(coordinates);
+        setDirectionType(directionType);
+    }
+
     private Coordinates  coordinates;
+
+    private DirectionType directionType;
 
     public Coordinates getCoordinates() {
         return coordinates;
@@ -24,6 +32,14 @@ public class PositionCommand extends BaseTransformationCommand<Robot> {
 
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
+    }
+
+    public DirectionType getDirectionType() {
+        return directionType;
+    }
+
+    public void setDirectionType(DirectionType directionType) {
+        this.directionType = directionType;
     }
 
     @Override
@@ -37,6 +53,7 @@ public class PositionCommand extends BaseTransformationCommand<Robot> {
     @Override
     public Robot execute(Robot instance) {
         instance.setCoordinates(getCoordinates());
+        instance.setDirectionType(getDirectionType());
         return instance;
     }
 }

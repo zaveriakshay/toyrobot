@@ -1,11 +1,9 @@
 package org.ideallo.puzzle.toyrobot.service.impl;
 
-import org.ideallo.puzzle.toyrobot.core.command.Instruction;
-import org.ideallo.puzzle.toyrobot.core.command.TransformationCommand;
-import org.ideallo.puzzle.toyrobot.core.object.Robot;
+import org.ideallo.puzzle.toyrobot.core.instruction.BaseInstruction;
+import org.ideallo.puzzle.toyrobot.core.Robot;
 import org.ideallo.puzzle.toyrobot.service.JoyStickService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,8 +19,8 @@ public class JoyStickServiceImpl extends BaseAbstractServiceImpl implements JoyS
     private Robot robot;
 
     @Override
-    public Robot transform(Robot robot, Instruction instruction) {
-        return (Robot)instruction.getTransformationCommand().executeCommand(robot);
+    public Robot transform(Robot robot, BaseInstruction baseInstruction) {
+        return (Robot) baseInstruction.getTransformationCommand().executeCommand(robot);
     }
 
     @Override

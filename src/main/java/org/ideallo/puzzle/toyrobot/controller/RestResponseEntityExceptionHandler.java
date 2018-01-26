@@ -1,9 +1,8 @@
 package org.ideallo.puzzle.toyrobot.controller;
 
-import org.ideallo.puzzle.toyrobot.core.object.TransformationException;
+import org.ideallo.puzzle.toyrobot.core.vector.TransformationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;

@@ -1,4 +1,4 @@
-package org.ideallo.puzzle.toyrobot.core.object;
+package org.ideallo.puzzle.toyrobot.core.vector;
 
 import org.ideallo.puzzle.toyrobot.core.Base;
 

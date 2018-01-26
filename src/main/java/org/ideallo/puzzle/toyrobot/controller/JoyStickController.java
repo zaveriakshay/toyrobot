@@ -4,10 +4,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.ideallo.puzzle.toyrobot.core.command.Instruction;
+import org.ideallo.puzzle.toyrobot.core.instruction.BaseInstruction;
 import org.ideallo.puzzle.toyrobot.core.enums.RotationType;
-import org.ideallo.puzzle.toyrobot.core.object.Coordinates;
-import org.ideallo.puzzle.toyrobot.core.object.Robot;
+import org.ideallo.puzzle.toyrobot.core.instruction.PositionInstruction;
+import org.ideallo.puzzle.toyrobot.core.instruction.RotationInstruction;
+import org.ideallo.puzzle.toyrobot.core.instruction.TranslationInstruction;
+import org.ideallo.puzzle.toyrobot.core.vector.Orientation;
+import org.ideallo.puzzle.toyrobot.core.Robot;
 import org.ideallo.puzzle.toyrobot.service.JoyStickService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +36,7 @@ public class JoyStickController {
 
     /**
      * PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner.
-     * @param coordinates
+     * @param orientation
      * @return
      */
     @RequestMapping(path = "/place", method = RequestMethod.POST)
@@ -43,10 +46,10 @@ public class JoyStickController {
             @ApiResponse(code = 404, message = "Exception while performing this transformation")
     }
     )
-    public Robot place(@RequestBody Coordinates coordinates){
-        Instruction instruction = new Instruction(coordinates);
+    public Robot place(@RequestBody Orientation orientation){
+        BaseInstruction baseInstruction = new PositionInstruction(orientation.getCoordinates(),orientation.getDirectionType());
         Robot output = joyStickService.report();
-        Robot transform = joyStickService.transform(output, instruction);
+        Robot transform = joyStickService.transform(output, baseInstruction);
         return transform;
     }
 
@@ -63,9 +66,9 @@ public class JoyStickController {
     }
     )
     public Robot move(){
-        Instruction instruction = new Instruction();
+        BaseInstruction baseInstruction = new TranslationInstruction();
         Robot output = joyStickService.report();
-        Robot transform = joyStickService.transform(output, instruction);
+        Robot transform = joyStickService.transform(output, baseInstruction);
         return transform;
     }
 
@@ -80,9 +83,9 @@ public class JoyStickController {
     }
     )
     public Robot left(){
-        Instruction instruction = new Instruction(RotationType.LEFT);
+        BaseInstruction baseInstruction = new RotationInstruction(RotationType.LEFT);
         Robot output = joyStickService.report();
-        Robot transform = joyStickService.transform(output, instruction);
+        Robot transform = joyStickService.transform(output, baseInstruction);
         return transform;
     }
 
@@ -97,9 +100,9 @@ public class JoyStickController {
     }
     )
     public Robot right(){
-        Instruction instruction = new Instruction(RotationType.RIGHT);
+        BaseInstruction baseInstruction = new RotationInstruction(RotationType.RIGHT);
         Robot output = joyStickService.report();
-        Robot transform = joyStickService.transform(output, instruction);
+        Robot transform = joyStickService.transform(output, baseInstruction);
         return transform;
     }
 

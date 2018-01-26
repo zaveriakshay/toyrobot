@@ -1,7 +1,7 @@
 package org.ideallo.puzzle.toyrobot.core.command;
 
 import org.ideallo.puzzle.toyrobot.core.Base;
-import org.ideallo.puzzle.toyrobot.core.object.TransformationException;
+import org.ideallo.puzzle.toyrobot.core.vector.TransformationException;
 
 /**
  * @author akshay.zaveri
