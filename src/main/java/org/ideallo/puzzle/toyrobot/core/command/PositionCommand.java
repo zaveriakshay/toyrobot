@@ -4,7 +4,7 @@ import org.ideallo.puzzle.toyrobot.core.constants.AppConstants;
 import org.ideallo.puzzle.toyrobot.core.enums.DirectionType;
 import org.ideallo.puzzle.toyrobot.core.vector.Coordinates;
 import org.ideallo.puzzle.toyrobot.core.Robot;
-import org.ideallo.puzzle.toyrobot.core.vector.TransformationException;
+import org.ideallo.puzzle.toyrobot.core.exception.TransformationException;
 
 /**
  * @author akshay.zaveri

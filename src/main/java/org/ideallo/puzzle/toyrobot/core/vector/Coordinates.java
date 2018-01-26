@@ -1,6 +1,13 @@
 package org.ideallo.puzzle.toyrobot.core.vector;
 
+import org.ideallo.puzzle.toyrobot.controller.validation.InRange;
 import org.ideallo.puzzle.toyrobot.core.Base;
+import org.ideallo.puzzle.toyrobot.core.constants.AppConstants;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import static org.ideallo.puzzle.toyrobot.core.constants.AppConstants.*;
 
@@ -9,8 +16,12 @@ import static org.ideallo.puzzle.toyrobot.core.constants.AppConstants.*;
  */
 public class Coordinates extends Base {
 
+    @NotNull
+    @InRange(min = 0,max = 4)
     private Integer x;
 
+    @NotNull
+    @InRange(min = 0,max = 4)
     private Integer y;
 
     public Coordinates(){

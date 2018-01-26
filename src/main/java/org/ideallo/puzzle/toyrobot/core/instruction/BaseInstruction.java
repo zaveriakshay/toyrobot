@@ -2,6 +2,7 @@ package org.ideallo.puzzle.toyrobot.core.instruction;
 
 import org.ideallo.puzzle.toyrobot.core.Base;
 import org.ideallo.puzzle.toyrobot.core.command.*;
+import org.ideallo.puzzle.toyrobot.core.enums.DirectionType;
 import org.ideallo.puzzle.toyrobot.core.enums.RotationType;
 import org.ideallo.puzzle.toyrobot.core.enums.TransformationType;
 import org.ideallo.puzzle.toyrobot.core.vector.Coordinates;
@@ -16,22 +17,6 @@ public abstract class BaseInstruction extends Base {
     private TransformationType transformationType;
 
     private BaseTransformationCommand transformationCommand;
-
-    public BaseInstruction(RotationType rotationType){
-        setTransformationType(TransformationType.ROTATE);
-        setTransformationCommand(new RotationCommand(rotationType));
-    }
-
-    public BaseInstruction(Coordinates coordinates){
-        setTransformationType(TransformationType.POSITION);
-        setTransformationCommand(new PositionCommand(coordinates));
-    }
-
-    public BaseInstruction(){
-        setTransformationType(TransformationType.TRANSLATE);
-        setTransformationCommand(new TranslationCommand());
-    }
-
 
     public TransformationType getTransformationType() {
         return transformationType;

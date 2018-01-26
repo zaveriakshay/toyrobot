@@ -2,6 +2,7 @@ package org.ideallo.puzzle.toyrobot.core.command;
 
 import org.ideallo.puzzle.toyrobot.core.Robot;
 import org.ideallo.puzzle.toyrobot.core.constants.AppConstants;
+import org.ideallo.puzzle.toyrobot.core.exception.TransformationException;
 import org.ideallo.puzzle.toyrobot.core.vector.*;
 
 /**

@@ -19,7 +19,7 @@ public class PositionInstruction extends BaseInstruction {
 
     public PositionInstruction(Coordinates coordinates, DirectionType directionType){
         setTransformationType(TransformationType.POSITION);
-        setTransformationCommand(new PositionCommand(coordinates));
+        setTransformationCommand(new PositionCommand(coordinates,directionType));
     }
 
 }

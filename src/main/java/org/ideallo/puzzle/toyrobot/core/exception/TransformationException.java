@@ -1,4 +1,4 @@
-package org.ideallo.puzzle.toyrobot.core.vector;
+package org.ideallo.puzzle.toyrobot.core.exception;
 
 /**
  * @author akshay.zaveri
