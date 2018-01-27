@@ -4,6 +4,8 @@ import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
 import org.idlo.puzzle.toyrobot.core.exception.BindingException;
 import org.idlo.puzzle.toyrobot.core.exception.Error;
 import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpHeaders;
@@ -25,25 +27,32 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 
     @ExceptionHandler(value = {BindingException.class,TransformationException.class, Exception.class})
     protected @ResponseBody ResponseEntity<? super Error> handleConflict(Exception ex, WebRequest request) {
+        debug("handleConflict:is called");
         String errorDetails = "";
         Error error = null;
         HttpHeaders headers = new HttpHeaders();
         HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
 
         if(ex instanceof TransformationException){
+            debug("handleConflict:is called for TransformationException");
             error = new Error(((TransformationException) ex).getErrorType(),errorDetails,messageSource);
             httpStatus = HttpStatus.BAD_REQUEST;
             return new ResponseEntity<Error>(error,httpStatus);
         }else if(ex instanceof BindingException){
+            debug("handleConflict:is called for BindingException");
             errorDetails = ex.getMessage();
             error = new Error(((BindingException) ex).getErrorType(),errorDetails,messageSource);
             httpStatus = HttpStatus.BAD_REQUEST;
             return new ResponseEntity<Error>(error,httpStatus);
         }else{
+            debug("handleConflict:is called for Exceptions");
             error = new Error(ErrorType.ERR0003,errorDetails,messageSource);
         }
 
         return handleExceptionInternal(ex, error,headers, httpStatus, request);
      }
 
+    private void debug(String s) {
+        logger.debug(s);
+    }
 }

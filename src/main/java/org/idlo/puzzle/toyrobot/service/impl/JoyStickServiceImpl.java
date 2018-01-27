@@ -4,6 +4,8 @@ import org.idlo.puzzle.toyrobot.core.Robot;
 import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
 import org.idlo.puzzle.toyrobot.core.instruction.BaseInstruction;
 import org.idlo.puzzle.toyrobot.service.JoyStickService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +23,13 @@ public class JoyStickServiceImpl extends BaseAbstractServiceImpl implements JoyS
 
     @Override
     public Robot transform(Robot robot, BaseInstruction baseInstruction) throws TransformationException {
+        debug("transform:is called");
         return (Robot) baseInstruction.getTransformationCommand().executeCommand(robot);
     }
 
     @Override
     public Robot report() {
+        debug("report:is called");
         return robot;
     }
 

@@ -26,6 +26,7 @@ public class TranslationCommand extends BaseTransformationCommand<Robot> {
 
     @Override
     public Robot preExecute(Robot instance) throws TransformationException {
+        super.preExecute(instance);
         init(instance);
 
         if(!instance.getCoordinates().isWithinRange(getTranslation().getAdjustmentCoodinates())){
@@ -35,7 +36,8 @@ public class TranslationCommand extends BaseTransformationCommand<Robot> {
     }
 
     @Override
-    public Robot execute(Robot instance) {
+    public Robot execute(Robot instance) throws TransformationException {
+        super.execute(instance);
         instance.getCoordinates().add(getTranslation().getAdjustmentCoodinates());
 
         return instance;

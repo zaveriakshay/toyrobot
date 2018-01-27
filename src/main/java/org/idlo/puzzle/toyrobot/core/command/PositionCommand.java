@@ -44,6 +44,7 @@ public class PositionCommand extends BaseTransformationCommand<Robot> {
 
     @Override
     public Robot preExecute(Robot instance) throws TransformationException {
+        super.preExecute(instance);
         if (!this.getCoordinates().isWithinRange(new Coordinates())) {
             throw new TransformationException(ErrorType.ERR0001);
         }
@@ -51,7 +52,8 @@ public class PositionCommand extends BaseTransformationCommand<Robot> {
     }
 
     @Override
-    public Robot execute(Robot instance) {
+    public Robot execute(Robot instance) throws TransformationException {
+        super.execute(instance);
         instance.setCoordinates(getCoordinates());
         instance.setDirectionType(getDirectionType());
         return instance;

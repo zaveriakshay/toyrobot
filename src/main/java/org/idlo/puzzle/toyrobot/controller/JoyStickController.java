@@ -16,6 +16,8 @@ import org.idlo.puzzle.toyrobot.core.instruction.TranslationInstruction;
 import org.idlo.puzzle.toyrobot.core.vector.Orientation;
 import org.idlo.puzzle.toyrobot.service.JoyStickService;
 import org.idlo.puzzle.toyrobot.core.constants.AppConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -39,6 +41,8 @@ import java.util.List;
 @Api(value="ToyRobot", description="Available commannds on the JoyStick Controller")
 public class JoyStickController {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     /**
      * Add the joystick service, use composition
      */
@@ -58,14 +62,20 @@ public class JoyStickController {
     }
     )
     public Robot place(@Valid @RequestBody Orientation orientation, BindingResult bindingResult) throws TransformationException {
+        debug("place:is called");
         handleBindingResult(bindingResult);
         BaseInstruction baseInstruction = new PositionInstruction(orientation.getCoordinates(),orientation.getDirectionType());
         Robot output = joyStickService.report();
         return joyStickService.transform(output, baseInstruction);
     }
 
+    private void debug(String s) {
+        logger.debug(s);
+    }
+
     private void handleBindingResult(BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
+            debug("handleBindingResult:has errors");
             String errorMessage = null;
             List<FieldError> fieldErrors = bindingResult.getFieldErrors();
             for(FieldError fieldError : fieldErrors){
@@ -88,6 +98,7 @@ public class JoyStickController {
     }
     )
     public Robot move()throws TransformationException{
+        debug("move:is called");
         BaseInstruction baseInstruction = new TranslationInstruction();
         Robot output = joyStickService.report();
         return joyStickService.transform(output, baseInstruction);
@@ -104,6 +115,7 @@ public class JoyStickController {
     }
     )
     public Robot left()throws TransformationException{
+        debug("left:is called");
         BaseInstruction baseInstruction = new RotationInstruction(RotationType.LEFT);
         Robot output = joyStickService.report();
         return joyStickService.transform(output, baseInstruction);
@@ -120,6 +132,7 @@ public class JoyStickController {
     }
     )
     public Robot right()throws TransformationException{
+        debug("right:is called");
         BaseInstruction baseInstruction = new RotationInstruction(RotationType.RIGHT);
         Robot output = joyStickService.report();
         return joyStickService.transform(output, baseInstruction);
@@ -131,17 +144,18 @@ public class JoyStickController {
      */
     @RequestMapping(path = "/report", method = RequestMethod.GET)
     public Robot report(){
+        debug("report:is called");
         return joyStickService.report();
     }
 
 
     @PostConstruct
     public void postInit(){
-        System.out.println("post Init for"+this.getClass().getSimpleName());
+        debug("post Init for"+this.getClass().getSimpleName());
     }
 
     @PreDestroy
     public void preDestroy(){
-        System.out.println("pre Destroy for"+this.getClass().getSimpleName());
+        debug("pre Destroy for"+this.getClass().getSimpleName());
     }
 }

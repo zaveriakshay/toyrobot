@@ -2,6 +2,7 @@ package org.idlo.puzzle.toyrobot.core.command;
 
 import org.idlo.puzzle.toyrobot.core.Robot;
 import org.idlo.puzzle.toyrobot.core.enums.RotationType;
+import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
 
 /**
  * @author akshay.zaveri
@@ -30,7 +31,8 @@ public class RotationCommand extends BaseTransformationCommand<Robot> {
     }
 
     @Override
-    public Robot execute(Robot instance) {
+    public Robot execute(Robot instance) throws TransformationException {
+        super.execute(instance);
         if(getRotationType() == RotationType.LEFT){
             instance.setDirectionType(instance.getDirectionType().getLeftDirectionType());
         }else if(getRotationType() == RotationType.RIGHT){
