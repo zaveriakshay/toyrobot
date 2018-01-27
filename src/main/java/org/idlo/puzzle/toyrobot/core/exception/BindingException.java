@@ -1,0 +1,36 @@
+package org.idlo.puzzle.toyrobot.core.exception;
+
+import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
+import org.springframework.validation.BindingResult;
+
+/**
+ * @author akshay.zaveri
+ */
+public class BindingException extends RuntimeException {
+
+    private ErrorType errorType;
+
+    private transient BindingResult bindingResult;
+
+    public BindingException(String message,BindingResult bindingResult,ErrorType errorType) {
+        super(message);
+        setBindingResult(bindingResult);
+        setErrorType(errorType);
+    }
+
+    public BindingResult getBindingResult() {
+        return bindingResult;
+    }
+
+    public void setBindingResult(BindingResult bindingResult) {
+        this.bindingResult = bindingResult;
+    }
+
+    public ErrorType getErrorType() {
+        return errorType;
+    }
+
+    public void setErrorType(ErrorType errorType) {
+        this.errorType = errorType;
+    }
+}
