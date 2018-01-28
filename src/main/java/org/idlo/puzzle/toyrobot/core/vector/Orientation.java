@@ -12,6 +12,8 @@ import javax.validation.constraints.NotNull;
  */
 public class Orientation extends Base {
 
+    private static final long serialVersionUID = -9162476558515322336L;
+
     @NotNull
     @Valid
     private DirectionType directionType;

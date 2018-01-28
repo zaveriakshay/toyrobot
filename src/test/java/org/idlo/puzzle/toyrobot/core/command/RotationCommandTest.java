@@ -17,6 +17,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
+/**
+ * This is the test class for {@link RotationCommand}
+ */
 public class RotationCommandTest {
     /**
      *
@@ -32,6 +35,10 @@ public class RotationCommandTest {
         MockitoAnnotations.initMocks(this);
     }
 
+    /**
+     * This is the method, to test the rotation mode left anf right.
+     * @throws Exception
+     */
     @Test
     public void testExecute() throws Exception {
         rotationCommand.setRotationType(RotationType.LEFT);

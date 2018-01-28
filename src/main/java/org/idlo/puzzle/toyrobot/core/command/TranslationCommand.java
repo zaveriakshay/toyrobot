@@ -13,8 +13,7 @@ import org.idlo.puzzle.toyrobot.core.vector.*;
  */
 public class TranslationCommand extends BaseTransformationCommand<Robot> {
 
-
-    private static final long serialVersionUID = -3235138479336955818L;
+    private static final long serialVersionUID = 7703071248716980479L;
 
     private Translation translation;
 

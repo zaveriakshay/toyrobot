@@ -17,6 +17,8 @@ import org.springframework.web.context.WebApplicationContext;
 @Scope(value = WebApplicationContext.SCOPE_APPLICATION)
 public class Robot extends Base {
 
+    private static final long serialVersionUID = 2774803028310034279L;
+
     private String name;
 
     private String model;

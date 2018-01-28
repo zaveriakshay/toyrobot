@@ -18,6 +18,9 @@ import org.slf4j.Logger;
 
 import static org.mockito.Mockito.*;
 
+/**
+ * This is the test class for {@link JoyStickServiceImpl}
+ */
 public class JoyStickServiceImplTest {
     @Mock
     Robot robot;
@@ -31,6 +34,10 @@ public class JoyStickServiceImplTest {
         MockitoAnnotations.initMocks(this);
     }
 
+    /**
+     * This method will test if the rotate instruction works.
+     * @throws Exception
+     */
     @Test
     public void testRotateTransform() throws Exception {
         Robot input = new Robot();
@@ -41,6 +48,10 @@ public class JoyStickServiceImplTest {
         Assert.assertEquals(DirectionType.WEST, result.getDirectionType());
     }
 
+    /**
+     * This method tests if the Position instruction works.
+     * @throws Exception
+     */
     @Test
     public void testPositionTransform() throws Exception {
         Robot input = new Robot();
@@ -50,12 +61,21 @@ public class JoyStickServiceImplTest {
         Assert.assertEquals(new Coordinates(2,3), result.getCoordinates());
     }
 
+    /**
+     * This is the test method to validate if the position instruction doesnot palce the robot outside the table.
+     * @throws Exception
+     */
     @Test(expected = TransformationException.class)
     public void testPositionTransformFailure() throws Exception {
         Robot input = new Robot();
         Robot result = joyStickServiceImpl.transform(input, new PositionInstruction(new Coordinates(7,3),DirectionType.NORTH));
     }
 
+    /**
+     * This method will do a simple check for translating the robot by one position towards
+     * NORTH
+     * @throws Exception
+     */
     @Test
     public void testTranslationTransform() throws Exception {
         Robot input = new Robot();
@@ -67,6 +87,10 @@ public class JoyStickServiceImplTest {
         Assert.assertEquals(new Coordinates(2,4), result.getCoordinates());
     }
 
+    /**
+     * This method will check the translation failure.
+     * @throws Exception
+     */
     @Test(expected = TransformationException.class)
     public void testTranslationTransformFailure() throws Exception {
         Robot input = new Robot();
@@ -76,6 +100,10 @@ public class JoyStickServiceImplTest {
         Robot result = joyStickServiceImpl.transform(input, new TranslationInstruction());
     }
 
+    /**
+     * This test to check the report.
+     * @throws Exception
+     */
     @Test
     public void testReport() throws Exception {
         Robot result = joyStickServiceImpl.report();

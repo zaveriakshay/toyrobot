@@ -8,6 +8,8 @@ import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
  */
 public class BaseException extends Exception {
 
+    private static final long serialVersionUID = -6186262781159953084L;
+
     private ErrorType errorType;
 
     public ErrorType getErrorType() {

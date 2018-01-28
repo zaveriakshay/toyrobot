@@ -13,6 +13,8 @@ import java.util.Objects;
  */
 public class Coordinates extends Base {
 
+    private static final long serialVersionUID = 3213247361390677871L;
+
     @NotNull
     @InRange(min = 0,max = 4)
     private Integer x;

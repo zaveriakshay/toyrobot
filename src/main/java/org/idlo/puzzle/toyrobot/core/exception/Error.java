@@ -14,7 +14,7 @@ import java.util.Locale;
  */
 public class Error extends Base{
 
-    private static final long serialVersionUID = 4088544047649619017L;
+    private static final long serialVersionUID = -656989706661989557L;
 
     private ErrorType errorCode;
 

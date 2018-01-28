@@ -9,6 +9,8 @@ import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
  */
 public class TransformationException extends BaseException {
 
+    private static final long serialVersionUID = -4092825134365615219L;
+
     public TransformationException(String message) {
         super(message);
     }

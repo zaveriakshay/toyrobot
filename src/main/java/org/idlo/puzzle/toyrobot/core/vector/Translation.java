@@ -10,7 +10,7 @@ import org.idlo.puzzle.toyrobot.core.enums.DirectionType;
  */
 public abstract class Translation extends Base {
 
-    private DirectionType directionType;
+    private static final long serialVersionUID = 1722311316071132573L;private DirectionType directionType;
 
     private Coordinates adjustmentCoodinates;
 

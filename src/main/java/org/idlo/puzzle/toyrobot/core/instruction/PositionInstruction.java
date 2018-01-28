@@ -11,7 +11,7 @@ import org.idlo.puzzle.toyrobot.core.vector.Coordinates;
  */
 public class PositionInstruction extends BaseInstruction {
 
-    private static final long serialVersionUID = -4651279752591398871L;
+    private static final long serialVersionUID = -4198827530152579110L;
 
     public PositionInstruction(Coordinates coordinates, DirectionType directionType){
         setTransformationType(TransformationType.POSITION);

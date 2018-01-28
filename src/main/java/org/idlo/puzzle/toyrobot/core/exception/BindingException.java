@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
  */
 public class BindingException extends RuntimeException {
 
+    private static final long serialVersionUID = 3228677799966469342L;
+
     private ErrorType errorType;
 
     private transient BindingResult bindingResult;

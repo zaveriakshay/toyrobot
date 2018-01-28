@@ -9,6 +9,8 @@ import org.idlo.puzzle.toyrobot.core.enums.DirectionType;
  */
 public class WestTranslation extends Translation {
 
+    private static final long serialVersionUID = -709700158974164704L;
+
     public WestTranslation(){
         setDirectionType(DirectionType.WEST);
         setAdjustmentCoodinates(new Coordinates(-1,0));

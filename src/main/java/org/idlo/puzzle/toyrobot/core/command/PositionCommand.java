@@ -13,7 +13,7 @@ import org.idlo.puzzle.toyrobot.core.vector.Coordinates;
  */
 public class PositionCommand extends BaseTransformationCommand<Robot> {
 
-    private static final long serialVersionUID = 2493299091335596551L;
+    private static final long serialVersionUID = -3474852420307586001L;
 
     public PositionCommand(Coordinates coordinates){
         setCoordinates(coordinates);

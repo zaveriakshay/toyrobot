@@ -11,7 +11,7 @@ import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
  */
 public class RotationCommand extends BaseTransformationCommand<Robot> {
 
-    private static final long serialVersionUID = 5256262707439829019L;
+    private static final long serialVersionUID = 313657854343381743L;
 
     private RotationType rotationType;
 

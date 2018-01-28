@@ -17,7 +17,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.mockito.Mockito.*;
 
-
+/**
+ * This is the test class for {@link TranslationCommand}
+ */
 @RunWith(SpringRunner.class)
 public class TranslationCommandTest {
     @Mock
@@ -34,6 +36,10 @@ public class TranslationCommandTest {
         MockitoAnnotations.initMocks(this);
     }
 
+    /**
+     * This method will test the movement of a robot from 0,0 to 0,4, facing NORTH.
+     * @throws Exception
+     */
     @Test
     public void testExecute() throws Exception {
         when(translation.getAdjustmentCoodinates()).thenReturn(new Coordinates(Integer.valueOf(0), Integer.valueOf(1)));
@@ -56,7 +62,10 @@ public class TranslationCommandTest {
 
     }
 
-
+    /**
+     * This method will test the move instruction towards north and robot falls.
+     * @throws Exception
+     */
     @Test(expected = TransformationException.class)
     public void testPreExecuteNorth() throws Exception {
         when(translation.getAdjustmentCoodinates()).thenReturn(new Coordinates(Integer.valueOf(0), Integer.valueOf(1)));
@@ -67,6 +76,10 @@ public class TranslationCommandTest {
         Robot result = translationCommand.preExecute(input);
     }
 
+    /**
+     * This method will test the move instruction towards east and robot falls.
+     * @throws Exception
+     */
     @Test(expected = TransformationException.class)
     public void testPreExecuteWest() throws Exception {
         when(translation.getAdjustmentCoodinates()).thenReturn(new Coordinates(Integer.valueOf(1), Integer.valueOf(0)));

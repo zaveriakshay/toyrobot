@@ -5,10 +5,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
+/**
+ * This is the test class for {@link Coordinates}
+ */
 @RunWith(SpringRunner.class)
 public class CoordinatesTest {
     Coordinates coordinates = new Coordinates(Integer.valueOf(0), Integer.valueOf(0));
 
+    /**
+     * This is the methos to check the Add operation.
+     * @throws Exception
+     */
     @Test
     public void testAdd() throws Exception {
         coordinates.add(new Coordinates(Integer.valueOf(3), Integer.valueOf(4)));
@@ -16,6 +23,10 @@ public class CoordinatesTest {
         Assert.assertEquals(coordinates.getY(),Integer.valueOf(4));
     }
 
+    /**
+     * This is the method for checking the is within range.
+     * @throws Exception
+     */
     @Test
     public void testIsWithinRange() throws Exception {
         coordinates.setX(4);
@@ -29,6 +40,10 @@ public class CoordinatesTest {
         Assert.assertEquals(Boolean.TRUE, result);
     }
 
+    /**
+     * This is the method for equals check
+     * @throws Exception
+     */
     @Test
     public void testEquals() throws Exception {
         coordinates.setX(13);

@@ -2,6 +2,8 @@ package org.idlo.puzzle.toyrobot.controller.validation;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.validation.Payload;
 
@@ -9,9 +11,18 @@ import java.lang.annotation.Annotation;
 
 import static org.mockito.Mockito.when;
 
+/**
+ * @author akshay.zaveri
+ * This is a test class for {@link InRangeValidator}
+ */
+@RunWith(SpringRunner.class)
 public class InRangeValidatorTest {
     InRangeValidator inRangeValidator = new InRangeValidator();
 
+    /**
+     * This is the test method for isValid
+     * @throws Exception
+     */
     @Test
     public void testIsValid() throws Exception {
 
@@ -51,5 +62,3 @@ public class InRangeValidatorTest {
         Assert.assertEquals(false, result);
     }
 }
-
-//Generated with love by TestMe :) Please report issues and submit feature requests at: http://weirddev.com/forum#!/testme

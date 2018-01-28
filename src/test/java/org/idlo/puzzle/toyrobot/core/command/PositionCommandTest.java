@@ -7,13 +7,19 @@ import org.idlo.puzzle.toyrobot.core.vector.Coordinates;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.mockito.Mockito.*;
 
+@RunWith(SpringRunner.class)
+/**
+ * This is the test class for {@link PositionCommand}
+ */
 public class PositionCommandTest {
     @Mock
     Coordinates coordinates;
@@ -31,6 +37,10 @@ public class PositionCommandTest {
         MockitoAnnotations.initMocks(this);
     }
 
+    /**
+     * This method will test if the pre-execute throws and exception for out of table coordinates.
+     * @throws Exception
+     */
     @Test(expected = TransformationException.class)
     public void testPreExecute() throws Exception {
         positionCommand.setCoordinates(new Coordinates(8,2));
@@ -39,6 +49,10 @@ public class PositionCommandTest {
         Robot result = positionCommand.preExecute(new Robot());
     }
 
+    /**
+     * This is the method to check if the coordinates and direction are set up correct.
+     * @throws Exception
+     */
     @Test
     public void testExecute() throws Exception {
         positionCommand.setCoordinates(new Coordinates(3,2));

@@ -10,7 +10,7 @@ import org.idlo.puzzle.toyrobot.core.enums.TransformationType;
  */
 public abstract class BaseInstruction extends Base {
 
-    private static final long serialVersionUID = -4651279752591398871L;
+    private static final long serialVersionUID = -1338850230826092743L;
 
     private TransformationType transformationType;
 

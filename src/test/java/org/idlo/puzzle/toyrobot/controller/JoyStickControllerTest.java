@@ -22,6 +22,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author akshay.zaveri
+ * This is the test class for {@link JoyStickController}, it is the integration test class.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,classes = Bootstrap.class)
 @AutoConfigureMockMvc
@@ -33,6 +37,10 @@ public class JoyStickControllerTest {
     @Autowired
     ObjectMapper objectMapper;
 
+    /**
+     * This is the method to test the place instruction
+     * @throws Exception
+     */
     @Test
     public void testPlace() throws Exception {
         Orientation orientation  =  new Orientation();
@@ -46,6 +54,10 @@ public class JoyStickControllerTest {
                 .andExpect(jsonPath("$.coordinates.y", is(3)));
     }
 
+    /**
+     * This is the method to test the place instruction, when coordinates are absent.
+     * @throws Exception
+     */
     @Test
     public void testPlaceAbsentCoordinates() throws Exception {
         Orientation orientation  =  new Orientation();
@@ -56,6 +68,10 @@ public class JoyStickControllerTest {
                 .andExpect(jsonPath("$.errorCode", is(ErrorType.ERR0004.name())));
     }
 
+    /**
+     * This is the method to test the move instruction
+     * @throws Exception
+     */
     @Test
     public void testMove() throws Exception {
         mvc.perform(put("/joyStick/move").accept(MediaType.APPLICATION_JSON))
@@ -64,6 +80,10 @@ public class JoyStickControllerTest {
                 .andExpect(jsonPath("$.coordinates.y", is(1)));
     }
 
+    /**
+     * This is the method to test the left instruction
+     * @throws Exception
+     */
     @Test
     public void testLeft() throws Exception {
         resetToNorth();
@@ -93,6 +113,10 @@ public class JoyStickControllerTest {
                 .andExpect(jsonPath("$.coordinates.y", is(0)));
     }
 
+    /**
+     * This is the method to reset Robot to north.
+     * @throws Exception
+     */
     private void resetToNorth() throws Exception {
         Orientation orientation  =  new Orientation();
         orientation.setCoordinates(new Coordinates(0,0));
@@ -105,6 +129,10 @@ public class JoyStickControllerTest {
                 .andExpect(jsonPath("$.coordinates.y", is(0)));
     }
 
+    /**
+     * This is the method to test the right instruction
+     * @throws Exception
+     */
     @Test
     public void testRight() throws Exception {
         resetToNorth();
@@ -134,6 +162,10 @@ public class JoyStickControllerTest {
                 .andExpect(jsonPath("$.coordinates.y", is(0)));
     }
 
+    /**
+     * This is the method to test the report instruction
+     * @throws Exception
+     */
     @Test
     public void testReport() throws Exception {
         resetToNorth();
