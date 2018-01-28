@@ -6,6 +6,7 @@ import org.idlo.puzzle.toyrobot.core.enums.TransformationType;
 
 /**
  * @author akshay.zaveri
+ * This class will represent all kinds of instructions in the application.
  */
 public abstract class BaseInstruction extends Base {
 

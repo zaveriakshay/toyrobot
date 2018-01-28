@@ -19,12 +19,22 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.net.URI;
 
+/**
+ * @author akshay.zaveri
+ * This class is the exception handler for the controller.
+ */
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Autowired
     MessageSource messageSource;
 
+    /**
+     * This method will hadnle all kinds of exceptions.
+     * @param ex
+     * @param request
+     * @return
+     */
     @ExceptionHandler(value = {BindingException.class,TransformationException.class, Exception.class})
     protected @ResponseBody ResponseEntity<? super Error> handleConflict(Exception ex, WebRequest request) {
         debug("handleConflict:is called");

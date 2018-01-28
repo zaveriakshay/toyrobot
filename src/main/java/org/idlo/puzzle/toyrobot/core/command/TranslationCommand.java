@@ -8,6 +8,8 @@ import org.idlo.puzzle.toyrobot.core.vector.*;
 
 /**
  * @author akshay.zaveri
+ * This class is a command, to handle the Position Instruction, its job is to
+ * update the coordinates of the Robot instance by an increment.
  */
 public class TranslationCommand extends BaseTransformationCommand<Robot> {
 

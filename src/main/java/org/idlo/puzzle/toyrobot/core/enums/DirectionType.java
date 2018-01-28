@@ -5,6 +5,7 @@ import org.idlo.puzzle.toyrobot.core.constants.AppConstants;
 
 /**
  * @author akshay.zaveri
+ * This enum will define the possible directions for the application.
  */
 public enum DirectionType {
 
@@ -16,8 +17,14 @@ public enum DirectionType {
 
     WEST (AppConstants.SOUTH, AppConstants.NORTH);
 
+    /**
+     * Final direction when -90 rotation is executed.
+     */
     private String leftDirection;
 
+    /**
+     * Final direction when -90 rotation is executed.
+     */
     private String rightDirection;
 
     public DirectionType getLeftDirectionType(){
@@ -28,6 +35,11 @@ public enum DirectionType {
         return DirectionType.valueOf(getRightDirection());
     }
 
+    /**
+     * Below contructor accepts the outcome -90 and 90 rotations.
+     * @param leftDirection
+     * @param rightDirection
+     */
     DirectionType(String leftDirection, String rightDirection){
         setLeftDirection(leftDirection);
         setRightDirection(rightDirection);

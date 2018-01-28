@@ -9,6 +9,7 @@ import java.util.Objects;
 
 /**
  * @author akshay.zaveri
+ * This is class reporesents the coordinates of the Robot.
  */
 public class Coordinates extends Base {
 

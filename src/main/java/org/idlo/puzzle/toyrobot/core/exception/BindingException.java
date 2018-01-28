@@ -5,6 +5,7 @@ import org.springframework.validation.BindingResult;
 
 /**
  * @author akshay.zaveri
+ * This is the root Binding Exceptoin claass for the entire application.
  */
 public class BindingException extends RuntimeException {
 

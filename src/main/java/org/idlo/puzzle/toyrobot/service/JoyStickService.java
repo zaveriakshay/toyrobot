@@ -12,12 +12,16 @@ import org.idlo.puzzle.toyrobot.core.instruction.BaseInstruction;
 public interface JoyStickService extends BaseAbstractService{
 
     /**
-     * This method will accept the command type vector and respond accordingly.
+     * This method will accept the instruction and respond accordingly.
      * @param baseInstruction
      * @param robot
      */
     Robot transform(Robot robot, BaseInstruction baseInstruction) throws TransformationException;
 
+    /**
+     * This class will simply return the current robot object.
+     * @return
+     */
     Robot report();
 
 }

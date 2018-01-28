@@ -6,30 +6,52 @@ import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
 
 /**
  * @author akshay.zaveri
+ * This is the Command interface, it will declare methods vital for any command execution
  */
 public interface TransformationCommand<T extends Base> {
 
+    /**
+     * This method will contain the transformation logic and udoate the object instance.
+     * @param instance
+     * @return
+     * @throws TransformationException
+     */
     T execute(T instance) throws TransformationException;
 
+    /**
+     * This method can be implemented for any kind of validation or transformation before calling the execute method.
+     * @param instance
+     * @return
+     * @throws TransformationException
+     */
     T preExecute(T instance) throws TransformationException;
 
+    /**
+     * This method can be implemented for any kind of formatting after the execute method.
+     * @param instance
+     * @return
+     * @throws TransformationException
+     */
     T postExecute(T instance) throws TransformationException;
 
     default T executeCommand(T instance) throws TransformationException{
 
         try{
             /**
-             * Clone here, as back up, if exception occurs the alteration done by execute will not reflect.
+             * Invoke the pre-execute.
              */
             T cloneInstance = preExecute(instance);
 
 
             /**
-             *
+             * Invoke the execute.
              */
             execute(cloneInstance);
 
 
+            /**
+             * Invoke the post execute.
+             */
             postExecute(cloneInstance);
         }catch(Exception exception){
             if(exception instanceof TransformationException){

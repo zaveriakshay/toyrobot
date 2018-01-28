@@ -21,12 +21,24 @@ public class JoyStickServiceImpl extends BaseAbstractServiceImpl implements JoyS
     @Autowired
     private Robot robot;
 
+    /**
+     * This method will accept the instructions and respond accordingly.
+     * It can handle the instructions for place, move, left and right instructions from user.
+     * @param robot
+     * @param baseInstruction
+     * @return
+     * @throws TransformationException
+     */
     @Override
     public Robot transform(Robot robot, BaseInstruction baseInstruction) throws TransformationException {
         debug("transform:is called");
         return (Robot) baseInstruction.getTransformationCommand().executeCommand(robot);
     }
 
+    /**
+     * This method will simply return the robot object
+     * @return
+     */
     @Override
     public Robot report() {
         debug("report:is called");

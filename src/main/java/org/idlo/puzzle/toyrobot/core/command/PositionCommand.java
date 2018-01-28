@@ -8,6 +8,8 @@ import org.idlo.puzzle.toyrobot.core.vector.Coordinates;
 
 /**
  * @author akshay.zaveri
+ * This class is a command, to handle the Position Instruction, its job is to
+ * set the user defined coordinates and direction type into the Robot instance.
  */
 public class PositionCommand extends BaseTransformationCommand<Robot> {
 

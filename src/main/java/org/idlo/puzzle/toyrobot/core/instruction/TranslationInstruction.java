@@ -5,6 +5,7 @@ import org.idlo.puzzle.toyrobot.core.enums.TransformationType;
 
 /**
  * @author akshay.zaveri
+ * This class is the instruction to represent any move command recieved.
  */
 public class TranslationInstruction extends BaseInstruction {
 

@@ -8,8 +8,8 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author akshay.zaveri
+ * This class represents the Direction and Coordinates of the robot.
  */
-
 public class Orientation extends Base {
 
     @NotNull

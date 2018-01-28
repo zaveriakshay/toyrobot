@@ -4,6 +4,8 @@ import org.idlo.puzzle.toyrobot.core.enums.DirectionType;
 
 /**
  * @author akshay.zaveri
+ * This class represent the translation when the robot faces WEST.
+ * The adjustment coordinates are set wrt to any movements that could occur facing WEST.
  */
 public class WestTranslation extends Translation {
 

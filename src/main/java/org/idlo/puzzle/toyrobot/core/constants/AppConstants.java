@@ -2,6 +2,7 @@ package org.idlo.puzzle.toyrobot.core.constants;
 
 /**
  * @author akshay.zaveri
+ * This class is the constants class.
  */
 public class AppConstants {
 

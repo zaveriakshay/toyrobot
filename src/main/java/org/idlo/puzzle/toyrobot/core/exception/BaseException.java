@@ -4,6 +4,7 @@ import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
 
 /**
  * @author akshay.zaveri
+ * This is the root class for all the exceptions in the application.
  */
 public class BaseException extends Exception {
 

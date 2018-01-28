@@ -2,6 +2,7 @@ package org.idlo.puzzle.toyrobot.core.enums;
 
 /**
  * @author akshay.zaveri
+ * This enum would declare all the erros code in the application
  */
 public enum ErrorType {
 

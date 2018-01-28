@@ -9,6 +9,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 /**
  * @author akshay.zaveri
+ * This is Robot class, its scope is applcation level.
+ * It has a name, model and version, the orientation is the most important, contains direction and coordinates.
  */
 
 @Component

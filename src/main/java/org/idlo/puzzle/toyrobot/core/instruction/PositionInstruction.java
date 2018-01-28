@@ -7,6 +7,7 @@ import org.idlo.puzzle.toyrobot.core.vector.Coordinates;
 
 /**
  * @author akshay.zaveri
+ * This class is the instruction to represent any place command recieved.
  */
 public class PositionInstruction extends BaseInstruction {
 

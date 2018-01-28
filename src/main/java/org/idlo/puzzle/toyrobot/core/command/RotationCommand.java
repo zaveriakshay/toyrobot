@@ -6,9 +6,10 @@ import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
 
 /**
  * @author akshay.zaveri
+ * This class is a command, to handle the Rotation Instruction, its job is to
+ * update the user defined direction type into the Robot instance.
  */
 public class RotationCommand extends BaseTransformationCommand<Robot> {
-
 
     private static final long serialVersionUID = 5256262707439829019L;
 

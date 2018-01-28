@@ -5,6 +5,8 @@ import org.idlo.puzzle.toyrobot.core.enums.DirectionType;
 
 /**
  * @author akshay.zaveri
+ * This class represents all kinds of translations possible, this can vary depending
+ * on the direction the robot is facing.
  */
 public abstract class Translation extends Base {
 

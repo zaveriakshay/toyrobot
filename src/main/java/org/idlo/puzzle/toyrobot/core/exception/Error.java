@@ -10,6 +10,7 @@ import java.util.Locale;
 
 /**
  * @author akshay.zaveri
+ * This class Error, will be returned to the end user, in a json format.
  */
 public class Error extends Base{
 

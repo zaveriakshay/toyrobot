@@ -6,6 +6,7 @@ import org.idlo.puzzle.toyrobot.core.enums.TransformationType;
 
 /**
  * @author akshay.zaveri
+ * This class is the instruction to represent any left/right command recieved.
  */
 public class RotationInstruction extends BaseInstruction {
 
