@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class BaseTransformationCommand<T extends Base> extends Base implements TransformationCommand<Robot> {
 
-    public T intiCommmand(T instance){
+    protected T intiCommmand(T instance){
         return instance;
     }
 

@@ -5,6 +5,7 @@ import org.idlo.puzzle.toyrobot.core.Base;
 import org.idlo.puzzle.toyrobot.core.constants.AppConstants;
 
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
  * @author akshay.zaveri
@@ -55,6 +56,15 @@ public class Coordinates extends Base {
         int futureX = this.getX() + coordinates.getX();
         int futureY = this.getY() + coordinates.getY();
         return futureX <= AppConstants.TABLE_MAX_X && futureX >= AppConstants.TABLE_MIN_X && futureY <= AppConstants.TABLE_MAX_Y && futureY >= AppConstants.TABLE_MIN_Y;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coordinates that = (Coordinates) o;
+        return Objects.equals(x, that.x) &&
+                Objects.equals(y, that.y);
     }
 
 }
