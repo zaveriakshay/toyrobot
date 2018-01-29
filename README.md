@@ -11,7 +11,7 @@
 
 <TABLE>
 <TR><TD>Swagger Documentation</TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/swagger-ui.html</TD></TR>
-<TR><TD>Live Implementation</TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/joySitck/report</TD></TR>
+<TR><TD>Live Implementation</TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/joyStick/report</TD></TR>
 <TR><TD>Postman Collections</TD><TD>toyrobot/POSTMAN</TD></TR>
 <TR><TD>Source Code</TD><TD>toyrobot/src</TD></TR>
 </TABLE>
