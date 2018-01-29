@@ -70,6 +70,7 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
             <LI><CODE>RIGHT</CODE> (PUT) /toyRobot/joyStick/right</LI>
             <LI><CODE>REPORT</CODE> (GET) /toyRobot/joyStick/report</LI> 
         </OL>
+        <img src="https://raw.githubusercontent.com/zaveriakshay/toyrobot/develop/Postman/swagger.jpg"/>
     </LI>
 </UL>
 </P>
