@@ -1,4 +1,5 @@
 <H1><U>Toy Robot Project</U></H1>
+<DIV>The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 x 5 units.</DIV>
 
 <TABLE>
 <TR><TD COLSPAN="2">This is a Robot !!</TD></TR>
@@ -34,6 +35,7 @@
 <UL>
     <LI>The origin (0,0) can be considered to be the SOUTH WEST most corner, this always the default posiion on the robot</LI>
     <LI>The robot must not fall off the table during movement. This also includes the initial placement of the toy robot.</LI>
+    <LI>The robot that is not on the table can choose the ignore the MOVE, LEFT, RIGHT and REPORT commands.</LI>
 </UL>
 </P>
 <DIV>
