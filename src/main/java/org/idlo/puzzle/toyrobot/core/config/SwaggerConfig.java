@@ -17,7 +17,7 @@ public class SwaggerConfig {
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .select().apis(RequestHandlerSelectors.basePackage("org.ideallo.puzzle.toyrobot.controller"))
+                .select().apis(RequestHandlerSelectors.basePackage("org.idlo.puzzle.toyrobot.controller"))
                 .build();
              
     }
