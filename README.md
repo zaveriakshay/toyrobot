@@ -19,6 +19,7 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
 </blockquote>
 <TABLE>
 <TR><TD>Swagger Documentation</TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/swagger-ui.html</TD></TR>
+<TR><TD colspan="2"><img src="https://raw.githubusercontent.com/zaveriakshay/toyrobot/develop/Postman/swagger.jpg"/></TD></TR>
 <TR><TD>Live Implementation</TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/joyStick/report</TD></TR>
 <TR><TD>Postman Collections</TD><TD>https://github.com/zaveriakshay/toyrobot/tree/develop/Postman</TD></TR>
 <TR><TD>Source Code</TD><TD>https://github.com/zaveriakshay/toyrobot/tree/develop/src</TD></TR>
@@ -70,7 +71,6 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
             <LI><CODE>RIGHT</CODE> (PUT) /toyRobot/joyStick/right</LI>
             <LI><CODE>REPORT</CODE> (GET) /toyRobot/joyStick/report</LI> 
         </OL>
-        <img src="https://raw.githubusercontent.com/zaveriakshay/toyrobot/develop/Postman/swagger.jpg"/>
     </LI>
 </UL>
 </P>
