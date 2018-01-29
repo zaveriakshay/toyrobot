@@ -33,7 +33,7 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
     <LI><code><B><U>PLACE</U></B></code> will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST.</LI>
     <LI><code><B><U>MOVE</U></B></code> will move the toy robot one unit forward in the direction it is currently facing.</LI>
     <LI><code><B><U>LEFT</U></B></code> and <code><B><U>RIGHT</U></B></code> will rotate the robot 90 degrees in the speciﬁed direction without changing the position of the robot.</LI>
-    <LI><code><B><U>REPORT</U></B> will announce the X,Y and F of the robot.</LI>
+    <LI><code><B><U>REPORT</U></B></code> will announce the X,Y and F of the robot.</LI>
 </UL>
 </P>
 <DIV>
