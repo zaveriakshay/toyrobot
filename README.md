@@ -8,7 +8,6 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
 
 
 <TABLE>
-<TR><TD COLSPAN="2">This is a Robot !!</TD></TR>
 <TR><TD>Version</TD><TD>1.0.0.X</TD></TR>
 <TR><TD>Name</TD><TD>Akshay Zaveri</TD></TR>
 <TR><TD>Model</TD><TD>T-900</TD></TR>
@@ -18,11 +17,11 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
 <H1><U>Artifacts</U></H1>
 </blockquote>
 <TABLE>
-<TR><TD>Swagger Documentation</TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/swagger-ui.html</TD></TR>
+<TR><TD><B>Swagger Documentation<B/></TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/swagger-ui.html</TD></TR>
 <TR><TD colspan="2"><img src="https://raw.githubusercontent.com/zaveriakshay/toyrobot/develop/Postman/swagger.jpg"/></TD></TR>
-<TR><TD>Live Implementation</TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/joyStick/report</TD></TR>
-<TR><TD>Postman Collections</TD><TD>https://github.com/zaveriakshay/toyrobot/tree/develop/Postman</TD></TR>
-<TR><TD>Source Code</TD><TD>https://github.com/zaveriakshay/toyrobot/tree/develop/src</TD></TR>
+<TR><TD><B>Live Implementation</B></TD><TD>https://toy-robot-t900.herokuapp.com/toyRobot/joyStick/report</TD></TR>
+<TR><TD><B>Postman Collections</B></TD><TD>https://github.com/zaveriakshay/toyrobot/tree/develop/Postman</TD></TR>
+<TR><TD><B>Source Code</B></TD><TD>https://github.com/zaveriakshay/toyrobot/tree/develop/src</TD></TR>
 </TABLE>
 
 <blockquote>
