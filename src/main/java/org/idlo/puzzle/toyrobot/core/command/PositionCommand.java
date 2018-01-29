@@ -60,4 +60,11 @@ public class PositionCommand extends BaseTransformationCommand<Robot> {
         instance.setDirectionType(getDirectionType());
         return instance;
     }
+
+    @Override
+    public Robot postExecute(Robot instance) throws TransformationException {
+        super.postExecute(instance);
+        instance.setPlaced(Boolean.TRUE);
+        return instance;
+    }
 }

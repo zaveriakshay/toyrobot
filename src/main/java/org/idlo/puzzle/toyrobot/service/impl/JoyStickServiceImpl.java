@@ -1,6 +1,8 @@
 package org.idlo.puzzle.toyrobot.service.impl;
 
 import org.idlo.puzzle.toyrobot.core.Robot;
+import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
+import org.idlo.puzzle.toyrobot.core.exception.RobotMissingException;
 import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
 import org.idlo.puzzle.toyrobot.core.instruction.BaseInstruction;
 import org.idlo.puzzle.toyrobot.service.JoyStickService;
@@ -40,9 +42,17 @@ public class JoyStickServiceImpl extends BaseAbstractServiceImpl implements JoyS
      * @return
      */
     @Override
-    public Robot report() {
+    public Robot report() throws TransformationException {
         debug("report:is called");
-        return robot;
+        if (!getRobot().getPlaced()) {
+            throw new RobotMissingException(ErrorType.ERR0005);
+        }
+        return getRobot();
+    }
+
+    @Override
+    public Robot fetchRobot() {
+        return getRobot();
     }
 
     public Robot getRobot() {

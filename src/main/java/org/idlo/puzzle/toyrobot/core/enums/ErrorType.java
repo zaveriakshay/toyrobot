@@ -12,7 +12,9 @@ public enum ErrorType {
 
     ERR0003("err.server.1"),
 
-    ERR0004("err.binding.1");
+    ERR0004("err.binding.1"),
+
+    ERR0005("err.robot.missing");
 
     private String key;
 

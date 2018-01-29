@@ -3,6 +3,7 @@ package org.idlo.puzzle.toyrobot.service.impl;
 import org.idlo.puzzle.toyrobot.core.Robot;
 import org.idlo.puzzle.toyrobot.core.enums.DirectionType;
 import org.idlo.puzzle.toyrobot.core.enums.RotationType;
+import org.idlo.puzzle.toyrobot.core.exception.RobotMissingException;
 import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
 import org.idlo.puzzle.toyrobot.core.instruction.PositionInstruction;
 import org.idlo.puzzle.toyrobot.core.instruction.RotationInstruction;
@@ -104,9 +105,19 @@ public class JoyStickServiceImplTest {
      * This test to check the report.
      * @throws Exception
      */
-    @Test
+    @Test(expected = RobotMissingException.class)
     public void testReport() throws Exception {
         Robot result = joyStickServiceImpl.report();
+        Assert.assertNotNull(result);
+    }
+
+    /**
+     * This test to check the fetch robot method.
+     * @throws Exception
+     */
+    @Test
+    public void testFetchRobot() throws Exception {
+        Robot result = joyStickServiceImpl.fetchRobot();
         Assert.assertNotNull(result);
     }
 }

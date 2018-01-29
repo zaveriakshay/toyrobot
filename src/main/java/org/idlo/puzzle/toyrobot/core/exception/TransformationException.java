@@ -5,7 +5,7 @@ import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
 /**
  * @author akshay.zaveri
  * This class is the Transformation Exception, will be used to handle and repsent any kind of internal
- * exceptions.
+ * exceptions, when there is any issue with transformation of the robot.
  */
 public class TransformationException extends BaseException {
 

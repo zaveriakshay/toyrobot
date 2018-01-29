@@ -32,7 +32,7 @@
 <DIV>
 <P>
 <UL>
-    <LI>The origin (0,0) can be considered to be the SOUTH WEST most corner, This always the default posiion on the robot</LI>
+    <LI>The origin (0,0) can be considered to be the SOUTH WEST most corner, this always the default posiion on the robot</LI>
     <LI>The robot must not fall off the table during movement. This also includes the initial placement of the toy robot.</LI>
 </UL>
 </P>

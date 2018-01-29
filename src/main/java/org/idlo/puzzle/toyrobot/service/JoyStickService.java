@@ -22,6 +22,10 @@ public interface JoyStickService extends BaseAbstractService{
      * This class will simply return the current robot object.
      * @return
      */
-    Robot report();
+    Robot report() throws TransformationException;
 
+    /**
+     * Fetch the current Robot instance, without checking the placement.
+     */
+    Robot fetchRobot();
 }

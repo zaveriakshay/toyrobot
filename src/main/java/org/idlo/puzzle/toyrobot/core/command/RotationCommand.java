@@ -1,8 +1,11 @@
 package org.idlo.puzzle.toyrobot.core.command;
 
 import org.idlo.puzzle.toyrobot.core.Robot;
+import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
 import org.idlo.puzzle.toyrobot.core.enums.RotationType;
+import org.idlo.puzzle.toyrobot.core.exception.RobotMissingException;
 import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
+import org.idlo.puzzle.toyrobot.core.vector.Coordinates;
 
 /**
  * @author akshay.zaveri
@@ -29,6 +32,12 @@ public class RotationCommand extends BaseTransformationCommand<Robot> {
 
     public void setRotationType(RotationType rotationType) {
         this.rotationType = rotationType;
+    }
+
+    @Override
+    public Robot preExecute(Robot instance) throws TransformationException {
+        super.preExecute(instance);
+        return instance;
     }
 
     @Override

@@ -65,7 +65,7 @@ public class JoyStickController {
         debug("place:is called");
         handleBindingResult(bindingResult);
         BaseInstruction baseInstruction = new PositionInstruction(orientation.getCoordinates(),orientation.getDirectionType());
-        Robot output = joyStickService.report();
+        Robot output = joyStickService.fetchRobot();
         return joyStickService.transform(output, baseInstruction);
     }
 
@@ -143,7 +143,7 @@ public class JoyStickController {
      * @return
      */
     @RequestMapping(path = "/report", method = RequestMethod.GET)
-    public Robot report(){
+    public Robot report()throws TransformationException{
         debug("report:is called");
         return joyStickService.report();
     }

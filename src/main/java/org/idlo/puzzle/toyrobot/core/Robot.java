@@ -1,5 +1,6 @@
 package org.idlo.puzzle.toyrobot.core;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.idlo.puzzle.toyrobot.core.enums.DirectionType;
 import org.idlo.puzzle.toyrobot.core.vector.Coordinates;
 import org.idlo.puzzle.toyrobot.core.vector.Orientation;
@@ -27,6 +28,8 @@ public class Robot extends Base {
 
     private Orientation orientation;
 
+    private Boolean isPlaced;
+
     public Robot(){
         init();
     }
@@ -38,6 +41,7 @@ public class Robot extends Base {
         setOrientation(new Orientation());
         setDirectionType(DirectionType.NORTH);
         setCoordinates(new Coordinates());
+        setPlaced(Boolean.FALSE);
     }
 
     public String getName() {
@@ -86,5 +90,14 @@ public class Robot extends Base {
 
     private void setOrientation(Orientation orientation) {
         this.orientation = orientation;
+    }
+
+    @JsonIgnore
+    public Boolean getPlaced() {
+        return isPlaced;
+    }
+
+    public void setPlaced(Boolean placed) {
+        isPlaced = placed;
     }
 }

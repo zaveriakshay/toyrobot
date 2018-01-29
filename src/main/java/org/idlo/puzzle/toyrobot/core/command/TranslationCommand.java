@@ -3,6 +3,7 @@ package org.idlo.puzzle.toyrobot.core.command;
 import org.idlo.puzzle.toyrobot.core.Robot;
 import org.idlo.puzzle.toyrobot.core.enums.DirectionType;
 import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
+import org.idlo.puzzle.toyrobot.core.exception.RobotMissingException;
 import org.idlo.puzzle.toyrobot.core.exception.TransformationException;
 import org.idlo.puzzle.toyrobot.core.vector.*;
 
@@ -28,6 +29,7 @@ public class TranslationCommand extends BaseTransformationCommand<Robot> {
     @Override
     public Robot preExecute(Robot instance) throws TransformationException {
         super.preExecute(instance);
+
         init(instance);
 
         if(!instance.getCoordinates().isWithinRange(getTranslation().getAdjustmentCoodinates())){

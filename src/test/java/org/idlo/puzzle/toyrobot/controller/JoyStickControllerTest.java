@@ -6,8 +6,10 @@ import org.idlo.puzzle.toyrobot.core.enums.DirectionType;
 import org.idlo.puzzle.toyrobot.core.enums.ErrorType;
 import org.idlo.puzzle.toyrobot.core.vector.Coordinates;
 import org.idlo.puzzle.toyrobot.core.vector.Orientation;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,6 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,classes = Bootstrap.class)
 @AutoConfigureMockMvc
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class JoyStickControllerTest {
 
     @Autowired
@@ -74,6 +77,8 @@ public class JoyStickControllerTest {
      */
     @Test
     public void testMove() throws Exception {
+        resetToNorth();
+
         mvc.perform(put("/joyStick/move").accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
                 .andExpect(jsonPath("$.coordinates.x", is(0)))
@@ -222,4 +227,49 @@ public class JoyStickControllerTest {
                 .andExpect(jsonPath("$.coordinates.y", is(0)));
     }
 
+    /**
+     * This is the method to test the move instruction without placing the robot
+     * @throws Exception
+     */
+    @Test
+    public void test1WithoutPlacement() throws Exception {
+        mvc.perform(put("/joyStick/move").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errorCode", is(ErrorType.ERR0005.name())));
+    }
+
+    /**
+     * This is the method to test the move instruction without placing the robot
+     * @throws Exception
+     */
+    @Test
+    public void test2WithoutPlacement() throws Exception {
+        mvc.perform(put("/joyStick/left").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errorCode", is(ErrorType.ERR0005.name())));
+    }
+
+
+    /**
+     * This is the method to test the move instruction without placing the robot
+     * @throws Exception
+     */
+    @Test
+    public void test3WithoutPlacement() throws Exception {
+        mvc.perform(put("/joyStick/right").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errorCode", is(ErrorType.ERR0005.name())));
+    }
+
+
+    /**
+     * This is the method to test the move instruction without placing the robot
+     * @throws Exception
+     */
+    @Test
+    public void test4WithoutPlacement() throws Exception {
+        mvc.perform(get("/joyStick/report").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errorCode", is(ErrorType.ERR0005.name())));
+    }
 }
