@@ -47,6 +47,30 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
     <LI>The origin (0,0) can be considered to be the SOUTH WEST most corner, this always the default posiion on the robot</LI>
     <LI>The robot must not fall off the table during movement. This also includes the initial placement of the toy robot.</LI>
     <LI>The robot that is not on the table can choose the ignore the MOVE, LEFT, RIGHT and REPORT commands.</LI>
+    <LI>Currently there is no command to remove the robot off the table, we need to restart the spring boot application.</LI>
+</UL>
+</P>
+<DIV>
+    
+<blockquote>
+<H1><U>Technical Specifications</U></H1>
+</blockquote>
+<DIV>
+<P>
+<UL>
+    <LI>This is a Spring Boot application</LI>
+    <LI>Default port for this application is <code>8085</code>.</LI>
+    <LI>Default context path for this application is <code>toyRobot</code></LI>
+    <LI>Default controller for this application is <code>joyStick</code></LI>
+    <LI>All services are REST, after the end point <code>/toyRobot/joyStick</code> are described on the swagger page as well
+        <OL>
+            <LI><CODE>PLACE</CODE> (POST) /toyRobot/joyStick/place</LI> 
+            <LI><CODE>MOVE</CODE> (PUT) /toyRobot/joyStick/move</LI> 
+            <LI><CODE>LEFT</CODE> (PUT) /toyRobot/joyStick/left</LI> 
+            <LI><CODE>RIGHT</CODE> (PUT) /toyRobot/joyStick/right</LI>
+            <LI><CODE>REPORT</CODE> (GET) /toyRobot/joyStick/report</LI> 
+        </OL>
+    </LI>
 </UL>
 </P>
 <DIV>
